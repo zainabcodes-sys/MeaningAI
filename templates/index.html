@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MeaningAI | NLP Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">✦ MeaningAI</div>
+
+            <p>Intelligent Language Analysis</p>
+
+            <div class="nav-item">
+                ◈ NLP Analyzer
+            </div>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="main-content">
+
+            <header class="header">
+                <span class="status">
+                    ● NLP SYSTEM ONLINE
+                </span>
+
+                <h1>Meaning Representation</h1>
+
+                <p>
+                    Transform natural language into
+                    structured semantic information.
+                </p>
+            </header>
+
+            <!-- Input Card -->
+            <section class="card">
+
+                <h2>✦ Sentence Analyzer</h2>
+
+                <p>
+                    Enter a sentence to explore its
+                    meaning using NLP.
+                </p>
+
+                <textarea
+                    id="sentence"
+                    placeholder="Example: Show me Python courses on Monday"></textarea>
+
+                <button type="button" id="analyzeBtn">
+                    ✨ Analyze Meaning
+                </button>
+
+            </section>
+
+            <!-- Results Card -->
+            <section class="card">
+
+                <h2>◈ Semantic Analysis Results</h2>
+
+                <p>
+                    Your processed sentence information
+                    will appear below.
+                </p>
+
+                <div class="result-box" id="results">
+                    Waiting for sentence input...
+                </div>
+
+            </section>
+            
+<section class="card history-section">
+    <h2>📜 Analysis History</h2>
+    <p>Previously analyzed sentences and their detected meanings.</p>
+
+    <button id="historyBtn" type="button">
+        View Analysis History
+    </button>
+
+    <div id="historyResults"></div>
+</section>
+
+
+
+        </main>
+
+    </div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

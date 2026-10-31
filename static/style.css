@@ -1,0 +1,293 @@
+
+/* MeaningAI - Dark Dashboard */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1020;
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: #111827;
+    border-right: 1px solid #293244;
+    padding: 30px 20px;
+}
+
+.logo {
+    color: #a78bfa;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.sidebar p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 40px;
+}
+
+.nav-item {
+    background: #252044;
+    color: #c4b5fd;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* Main content */
+
+.main-content {
+    flex: 1;
+    padding: 45px;
+    max-width: 1200px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: #94a3b8;
+    margin-bottom: 35px;
+}
+
+/* Cards */
+
+.card {
+    background: #151e30;
+    border: 1px solid #293244;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+/* Input */
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    background: #0b1020;
+    border: 1px solid #39445b;
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #8b5cf6;
+}
+
+textarea::placeholder {
+    color: #64748b;
+}
+
+/* Button */
+
+button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124,58,237,0.3);
+}
+
+/* Results */
+
+.result-box {
+    background: #0b1020;
+    border: 1px dashed #475569;
+    border-radius: 12px;
+    padding: 25px;
+    color: #94a3b8;
+}
+
+.status {
+    display: inline-block;
+    color: #a78bfa;
+    background: #2e2351;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar p {
+        margin-bottom: 15px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+/* Professional NLP Result Cards */
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    color: #f1f5f9;
+}
+
+.analysis-card {
+    background: #151e30;
+    border: 1px solid #39445b;
+    border-radius: 14px;
+    padding: 22px;
+    min-width: 0;
+    transition: 0.2s ease;
+}
+
+.analysis-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-2px);
+}
+
+.analysis-card h3 {
+    color: #c4b5fd;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.analysis-card p {
+    color: #f8fafc;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.entity-tag,
+.token-tag {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin: 4px;
+}
+
+.entity-tag {
+    background: #312e81;
+    color: #ddd6fe;
+}
+
+.token-tag {
+    background: #164e63;
+    color: #a5f3fc;
+}
+
+.analysis-card pre {
+    background: #080d19;
+    color: #86efac;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    #results {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Analysis History Styling */
+
+.history-section {
+    margin-top: 25px;
+}
+
+.history-section h2 {
+    color: #c4b5fd;
+    margin-bottom: 10px;
+}
+
+.history-section > p {
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+#historyResults {
+    margin-top: 22px;
+    display: grid;
+    gap: 14px;
+}
+
+.history-card {
+    background: #151e30;
+    border: 1px solid #39445b;
+    border-left: 4px solid #8b5cf6;
+    padding: 18px;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.history-card h3 {
+    color: #f8fafc;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.history-card p {
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.history-card small {
+    color: #94a3b8;
+}
